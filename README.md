@@ -1,1 +1,1 @@
-# basic app
+# basic-app
