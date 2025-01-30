@@ -4,17 +4,20 @@ on:
   pull_request:
     types: [ opened, synchronize, reopened, edited ]
 
+permissions:
+  contents: read
+  
 jobs:
   pr:
     name: lint-test
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/setup-node@v3
+      - uses: actions/setup-node@v4
         with:
-          node-version: 22
+          node-version: 20
 
-      - run: npm ci
-        shell: bash
+      - run: npm i
+        
 
       - name: Lint
         run: npm run lint
